@@ -1,8 +1,10 @@
-import {
+import GraphQL from 'graphql';
+
+const {
     GraphQLInputObjectType,
     GraphQLString,
     GraphQLNonNull,
-} from 'graphql';
+} = GraphQL;
 
 export const userInput = new GraphQLInputObjectType({
     name: 'UserInput',

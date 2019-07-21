@@ -1,13 +1,16 @@
-import {
+import GraphQL from 'graphql';
+
+import { userInterface } from '../interface/index.js';
+import { articleType } from './article.js';
+
+const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLID,
     GraphQLNonNull,
     GraphQLList,
     GraphQLInt,
-} from 'graphql';
-
-import { userInterface } from '../interface/index.js';
+} = GraphQL;
 
 export const directorType = new GraphQLObjectType({
     name: 'Author',

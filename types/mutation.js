@@ -1,9 +1,12 @@
-import {
-    GraphQLObjectType,
-} from 'graphql';
+import GraphQL from 'graphql';
 
-import { userInput, authorType, articleInput, articleType } from './common/index.js';
+import { authorType, articleType } from './common/index.js';
+import { userInput, articleInput } from './input/index.js'
 import { User, Article } from '../db/index.js';
+
+const {
+    GraphQLObjectType,
+} = GraphQL;
 
 export const mutationType = new GraphQLObjectType({
     name: 'Mutation',

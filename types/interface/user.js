@@ -1,12 +1,14 @@
-import {
+import GraphQL from 'graphql';
+
+import { articleType, authorType, directorType } from '../common/index.js';
+
+const {
     GraphQLInterfaceType,
     GraphQLString,
     GraphQLID,
     GraphQLNonNull,
     GraphQLList,
-} from 'graphql';
-
-import { articleType, authorType, directorType } from '../common/index.js';
+} = GraphQL;
 
 export const userInterface = new GraphQLInterfaceType({
     name: 'User',

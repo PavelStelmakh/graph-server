@@ -1,13 +1,15 @@
-import {
-    GraphQLObjectType,
-    GraphQLNonNull,
-    GraphQLList,
-    GraphQLID,
-} from 'graphql';
+import GraphQL from 'graphql';
 
 import { userInterface } from './interface/index.js';
 import { authorType } from './common/index.js';
 import { User } from '../db/index.js';
+
+const {
+    GraphQLObjectType,
+    GraphQLNonNull,
+    GraphQLList,
+    GraphQLID,
+} = GraphQL;
 
 export const queryType = new GraphQLObjectType({
     name: 'Query',

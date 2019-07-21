@@ -1,12 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { GraphQLSchema } from 'graphql';
+import GraphQL from 'graphql';
 import graphqlHTTP from 'express-graphql';
 
 import { PORT, NODE_ENV } from './config.js';
 import { mutationType, queryType } from './types/index.js';
 
 const app = express();
+const { GraphQLSchema } = GraphQL;
 
 // const { buildSchema } = Graphql;
 

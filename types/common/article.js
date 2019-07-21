@@ -1,9 +1,11 @@
-import {
+import GraphQL from 'graphql';
+
+const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLID,
     GraphQLNonNull,
-} from 'graphql';
+} = GraphQL;
 
 export const articleType = new GraphQLObjectType({
     name: 'Article',
