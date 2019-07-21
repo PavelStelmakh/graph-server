@@ -23,4 +23,8 @@ export const userScheme = new Schema({
         type: String,
         required: true,
     },
+    articles: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Article'
+    }]
 });
