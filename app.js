@@ -4,7 +4,13 @@ import GraphQL from 'graphql';
 import graphqlHTTP from 'express-graphql';
 
 import { PORT, NODE_ENV } from './config.js';
-import { mutationType, queryType } from './types/index.js';
+import {
+    mutationType,
+    queryType,
+    articleType,
+    authorType,
+    directorType,
+} from './types/index.js';
 
 const app = express();
 const { GraphQLSchema } = GraphQL;
@@ -72,6 +78,11 @@ const { GraphQLSchema } = GraphQL;
 const schema = new GraphQLSchema({
     query: queryType,
     mutation: mutationType,
+    types: [
+        articleType,
+        authorType,
+        directorType,
+    ],
 });
 
 // const rootValue = {

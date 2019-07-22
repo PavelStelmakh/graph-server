@@ -9,10 +9,10 @@ const {
 export const userInput = new GraphQLInputObjectType({
     name: 'UserInput',
     fields: {
-        name: GraphQLString,
-        lastName: GraphQLString,
-        email: new GraphQLNonNull(GraphQLString),
-        birthday: GraphQLString,
-        password: new GraphQLNonNull(GraphQLString),
+        name: { type: GraphQLString },
+        lastName: { type: GraphQLString },
+        email: { type: GraphQLNonNull(GraphQLString) },
+        birthday: { type: GraphQLString },
+        password: { type: GraphQLNonNull(GraphQLString) },
     },
 });

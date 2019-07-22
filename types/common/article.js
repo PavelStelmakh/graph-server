@@ -10,7 +10,7 @@ const {
 export const articleType = new GraphQLObjectType({
     name: 'Article',
     fields: {
-        id: new GraphQLNonNull(GraphQLID),
+        id: { type: GraphQLNonNull(GraphQLID) },
         title: {
             type: GraphQLString,
             defaultValue: '',
@@ -19,6 +19,6 @@ export const articleType = new GraphQLObjectType({
             type: GraphQLString,
             defaultValue: '',
         },
-        createdBy: new GraphQLNonNull(GraphQLID),
+        createdBy: { type: GraphQLNonNull(GraphQLID) },
     },
 });

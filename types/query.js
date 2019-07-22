@@ -15,7 +15,7 @@ export const queryType = new GraphQLObjectType({
     name: 'Query',
     fields: {
         users: {
-            type: new GraphQLList(new GraphQLNonNull(authorType)),
+            type: GraphQLList(GraphQLNonNull(authorType)),
             resolve: async () => {
                 return await User.find().populate('articles');
             },
@@ -23,12 +23,12 @@ export const queryType = new GraphQLObjectType({
         user: {
             type: userInterface,
             args: {
-                id: new GraphQLNonNull(GraphQLID)
+                id: { type: GraphQLNonNull(GraphQLID) },
             },
             resolve: async (_, { id }) => {
-                const u = await User.findById(id);
+                const u = await User.findById(id).populate('articles');
                 if (id === '5d330a9a2eb9dc093089ec2e') {
-                    return { ...u, money: 1000 }
+                    return Object.assign(u, { money: 1000 });
                 }
                 return u;
             },

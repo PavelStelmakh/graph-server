@@ -13,13 +13,13 @@ const {
 export const userInterface = new GraphQLInterfaceType({
     name: 'User',
     fields: {
-        id: new GraphQLNonNull(GraphQLID),
-        name: GraphQLString,
-        lastName: GraphQLString,
-        email: new GraphQLNonNull(GraphQLString),
-        birthday: GraphQLString,
-        password: new GraphQLNonNull(GraphQLString),
-        articles: new GraphQLList(new GraphQLNonNull(articleType)),
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+        lastName: { type: GraphQLString },
+        email: { type: GraphQLNonNull(GraphQLString) },
+        birthday: { type: GraphQLString },
+        password: { type: GraphQLNonNull(GraphQLString) },
+        articles: { type: GraphQLList(GraphQLNonNull(articleType)) },
     },
     resolveType: parent => {
         if (parent.money) {

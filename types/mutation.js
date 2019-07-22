@@ -14,7 +14,7 @@ export const mutationType = new GraphQLObjectType({
         createUser: {
             type: authorType,
             args: {
-                user: userInput,
+                user: { type: userInput },
             },
             resolve: async (_, { user }) => {
                 const createdUser = new User(user);
@@ -25,7 +25,7 @@ export const mutationType = new GraphQLObjectType({
         createArticle: {
             type: articleType,
             args: {
-                article: articleInput,
+                article: { type: articleInput },
             },
             resolve: async (_, { article }) => {
                 const createdArticle = new Article(article);

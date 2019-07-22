@@ -13,16 +13,16 @@ const {
 } = GraphQL;
 
 export const directorType = new GraphQLObjectType({
-    name: 'Author',
+    name: 'Director',
     interfaces: [userInterface],
     fields: {
-        id: new GraphQLNonNull(GraphQLID),
-        name: GraphQLString,
-        lastName: GraphQLString,
-        email: new GraphQLNonNull(GraphQLString),
-        birthday: GraphQLString,
-        password: new GraphQLNonNull(GraphQLString),
-        articles: new GraphQLList(new GraphQLNonNull(articleType)),
-        money: new GraphQLNonNull(GraphQLInt),
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+        lastName: { type: GraphQLString },
+        email: { type: GraphQLNonNull(GraphQLString) },
+        birthday: { type: GraphQLString },
+        password: { type: GraphQLNonNull(GraphQLString) },
+        articles: { type: GraphQLList(GraphQLNonNull(articleType)) },
+        money: { type: GraphQLNonNull(GraphQLInt) },
     }
 });

@@ -10,8 +10,8 @@ const {
 export const articleInput = new GraphQLInputObjectType({
     name: 'ArticleInput',
     fields: {
-        title: GraphQLString,
-        description: GraphQLString,
-        createdBy: new GraphQLNonNull(GraphQLID),
+        title: { type: GraphQLString },
+        description: { type: GraphQLString },
+        createdBy: { type: GraphQLNonNull(GraphQLID) },
     },
 });
