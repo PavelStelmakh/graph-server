@@ -1,5 +1,11 @@
-export * from './mutation.js';
-export * from './query.js';
-export * from './common/index.js';
-export * from './input/index.js';
-export * from './interface/index.js';
+import { queryType } from './query.js';
+import { authorType } from './author/index.js';
+
+export const typeDefs = [queryType, authorType];
+export const resolvers = {
+    Query: {
+        users: async (parent, args, { db }) => {
+            return await db.User.find().populate('articles');
+        }
+    },
+};
